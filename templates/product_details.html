@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ product_details['product']['title'] }}{% endblock %}
+{% block content %}
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(750px, 1fr)); grid-gap: 25px; justify-content: center;">
+    <div style="display: flex; justify-content: center; flex: 0">
+        <img src="https://via.placeholder.com/750" height="750" alt="{{ product_details['product']['title'] }}">
+    </div>
+    <div style="display: flex;">
+        <div>
+            <h2 style="margin: 0;">
+                {{ product_details['product']['title'] }}
+            </h2>
+            <h4 style="color: goldenrod; margin: 0; margin-top: 1em;">{{ product_details['product']['price'] }}</h4>
+        </div>
+    </div>
+</div>
+{% endblock %}

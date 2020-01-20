@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Passion for Football{% endblock %}
+{% block content %}
+<div style="display: flex; flex-direction: column; padding: 0 100px;">
+    <h1>Top 10 popular products</h1>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, 250px); grid-auto-rows: 300px; grid-gap: 25px; justify-content: center;">
+        {% for product_details in popular_products %}
+        <a href="{{ product_details['url'] }}" style="background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+            <img src="https://via.placeholder.com/250" alt="{{ product_details['product']['title'] }}">
+            <h2>{{ product_details['product']['title'] }}</h2>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
